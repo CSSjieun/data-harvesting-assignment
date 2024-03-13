@@ -320,7 +320,7 @@ words <- words |>
 words
 ```
 
-Visualization
+### Visualization
 
 ```{r}
 library(ggplot2)
@@ -348,7 +348,6 @@ Identifying the most frequent words within each type
 
 ```{r}
 #Assigned ranks to rows within each group based on their order
-
 freq_rank <- words %>% 
   group_by(type) %>% 
   #we create the column for the rank with row_number by type
@@ -361,7 +360,7 @@ freq_rank
 freq_rank |> group_by(type) |> filter(rank == 1 | rank == 2)
 ```
 
-Visualization 
+### Visualization 
 
 ```{r}
 freq_rank %>% 
@@ -381,7 +380,7 @@ sentiments
 
 ```
 
-Visualization
+### Visualization
 
 ```{r}
 library(ggplot2)
@@ -478,7 +477,7 @@ print(link_comments)
 link_comments <- link_comments |> rename("text" = "response_list.data.children.data.body")
 ```
 We repeated this 5 times in total to get 500 comments (it is limited to request 100 comments per one GET request).
-Not to make comments duplicated a lot, we changed sort parameter in query parameters as "best", "relevance", "top", "hot", and "new".
+Not to make comments duplicated a lot, we changed sort parameter in query parameters as **"best", "relevance", "top", "hot", and "new"**.
 
 Step 4. Merge all the dataset.
 
@@ -665,15 +664,18 @@ words_yt <- words |> # YouTube
 
 words_yt <- as.data.frame(words_yt) #convert into a data frame
 words_yt <- words_yt |> rename("term_frequency" = "frequency") #rename columns to match it with reddit data
-words_yt <- words_yt |> filter(word != "vote") #filtered words that are not equal to vote, because "vote" belong to positive and negative 
+
+#filtered words that are not equal to vote, because "vote" belong to both positive and negative 
+words_yt <- words_yt |> filter(word != "vote")
 ```
 
 ### Reddit
 ```{r}
 comment_words_rd <- comment_words |> # Reddit 
-  mutate(platform = c("Reddit"))  #add a platform column 
+  mutate(platform = c("Reddit"))  #add a platform column
 
-comment_words_rd <- comment_words_rd |> filter(word != "influence") filtered words that are not equal to influence, because "influence" belong to positive and negative 
+# filtered words that are not equal to influence, because "influence" belong to both positive and negative 
+comment_words_rd <- comment_words_rd |> filter(word != "influence")
 ```
 
 ### Merge two dataset: words_yt(YouTube) and comment_words_rd(Reddit)
