@@ -656,7 +656,7 @@ freq_by_rank %>%
   theme_minimal()
 ```
 
-# COMPARING YOUTUBE AND REDDIT COMMENTS RELATED TO TRUMP 
+## COMPARING YOUTUBE AND REDDIT COMMENTS RELATED TO TRUMP 
 
 ### Youtube
 ```{r}
@@ -674,11 +674,13 @@ comment_words_rd <- comment_words |> # Reddit
   mutate(platform = c("Reddit"))  #add a platform column 
 
 comment_words_rd <- comment_words_rd |> filter(word != "influence") filtered words that are not equal to influence, because "influence" belong to positive and negative 
+```
 
+### Merge two dataset: words_yt(YouTube) and comment_words_rd(Reddit)
+```{r}
 combined_yt_rd <- rbind(words_yt, comment_words_rd) #combined both dataframes 
 combined_yt_rd |> group_by(platform) #grouped by platform 
 |>  arrange(desc(term_frequency)) #sort to identify the most frequent "term_frequency"
-
 ```
 
 ### Visualization
@@ -702,10 +704,8 @@ combined_yt_rd |>
 ### Word cloud 
 ### Libraries needed for this plot 
 ```{r}
-#install.packages("wordcloud")
+#install.packages("wordcloud2")
 library(RColorBrewer)
-library(wordcloud)
-library(reshape2)
 library(wordcloud2)
 ```
 
@@ -718,7 +718,7 @@ wordcloud2(color = "random-dark",
             size = 2,
             widgetsize = c(900, 500))
 
-yt_wordclod
+print(yt_wordclod)
 ```
 
 ### WordCloud2 - Reddit
@@ -730,7 +730,7 @@ wordcloud2(color = "random-dark",
             size = 0.8,
             widgetsize = c(900, 500))
 
-Rd_wordcloud
+print(Rd_wordcloud)
 ```
 
 
