@@ -753,3 +753,14 @@ wordcloud2(color = "random-dark",
 
 Rd_wordcloud
 ```
+
+## Interpretation
+
+When we did the sentimental analysis, we were able to identify some words from people's opinion which are positive and negative related to Donald Trump. From the **YouTube**, there are more negative words (11704 in total) than positive words (10900 in total) related to comments about Donald Trump. There are positive words such as "love", "peace", "top", "freedom", "protect", "supreme" and "happy". On the other hand, negative words are "dictator", "criminal", "bad", "lie", "enemy", "traitor", and "prison". 
+
+From the **Reddit**, there are more positive words (952 in total) than negative words (867 in total) in the comments related to Donald Trump. Positive words are "money", "special", "good", "pay", "completely", "president", and "primary". Negative words are "government", "shit", "bad", "problem", "propaganda", "wrong", and "case".
+
+## Challenges
+
+Our main challenges that we have had during data extraction using API were obtaining API_KEY and tokens and finding appropriate endpoint for searching and getting the right dataset. However, since Reddit and YouTube API has a well written API documentation, we were able to figure it out and get the comment data. 
+
