@@ -272,7 +272,6 @@ yt_trump_trust$type = c("trust")
 print(yt_trump_trust)
 
 ```
-
 Merge all words with count
 
 ```{r}
@@ -298,7 +297,7 @@ print(yt_trump_plot)
 
 ### Term frequency analysis
 
-Using "yt_trump" variable create before we can calculate total number of comments in each sentimental types and then grouped by type to sum all the totals in the n column of yt_trump and create a column called total with the total of words by user
+Using "yt_trump" variable create before we can calculate total number of comments in each sentimental types and then grouped by type to sum all the totals in the n column of yt_trump and create a column called total with the total of words by user.
 
 ```{r}
 total_words <- yt_trump |> 
@@ -308,7 +307,7 @@ total_words <- yt_trump |>
 total_words
 ```
 
-Add a column with this total number to the dataframe yt_words, we use left join because we need the join to keep all rows in yt_words, regardless of repeating rows
+Add a column with this total number to the dataframe yt_words, we use left join because we need the join to keep all rows in yt_words, regardless of repeating rows.
 
 ```{r}
 words <- yt_trump |> 
@@ -325,14 +324,14 @@ words
 ```{r}
 library(ggplot2)
 
-#we calculate the distribution and put it in the x axis, filling by type
+#we calculate the distribution and put it in the x axis
 ggplot(words, aes(frequency)) +
   #we create the bars histogram
   geom_histogram(show.legend = TRUE) +
   #we set the limit for the term frequency in the x axis
   xlim(NA, 0.015)
 ```
-Histogram of word frequencies,each bar = type of words
+Histogram of word frequencies, each bar = type of words
 
 ```{r}
 ggplot(words, aes(frequency, fill = type)) +
