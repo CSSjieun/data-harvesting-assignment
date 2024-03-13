@@ -681,7 +681,7 @@ freq_by_rank %>%
   theme_minimal()
 ```
 
-# COMPARING YOUTUBE AND REDDIT COMMENTS RELATED TO TRUMP 
+## COMPARING YOUTUBE AND REDDIT COMMENTS RELATED TO TRUMP 
 ### Youtube
 ```{r}
 words_yt <- words |> # YouTube
@@ -725,10 +725,8 @@ combined_yt_rd |>
 ### Word cloud 
 ### Libraries needed for this plot 
 ```{r}
-#install.packages("wordcloud")
+#install.packages("wordcloud2")
 library(RColorBrewer)
-library(wordcloud)
-library(reshape2)
 library(wordcloud2)
 ```
 
@@ -755,10 +753,3 @@ wordcloud2(color = "random-dark",
 
 Rd_wordcloud
 ```
-
-### Shiny App
-```{r}
-
-```
-
-
