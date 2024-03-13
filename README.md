@@ -2,6 +2,13 @@
 
 This project aims to conduct a comprehensive analysis of "Trump"-related comments on two platforms, Youtube and Reddit. As the elections draw near, the prevalence of discussions about Trump becomes more pronounced. Our objective is to analyse and compare the reactions of individuals on these two distinct platforms, making clear the diverse perspectives and responses within these online communities.
 
+## API (Application Programming Interface)
+
+![image](https://github.com/CSSjieun/data-harvesting-assignment/assets/152406885/3b834325-bc42-4c63-93d0-5a9c68ea429d)
+Figure 1. The process of REST API (Authentication and HTTP::GET request), resource: Elsevier Developer Portal
+
+A RESTful API (Application Programming Interface) is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. There are several HTTP request contating GET, PUT, POST, and DELETE meaning that reading, updating, creating, and deleting of opoerations concerning resources. By using this HTTP request, we can obtain data formats such as JSON and XML.
+
 ## Libraries that we have used to get the REST API from Youtube and Reddit
 ```{r}
 library(httr)
@@ -733,6 +740,10 @@ wordcloud2(color = "random-dark",
 
 print(Rd_wordcloud)
 ```
+
+## References
+
+(REST API)[https://www.techtarget.com/searchapparchitecture/definition/RESTful-API]
 
 
 
