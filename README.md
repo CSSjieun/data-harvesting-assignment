@@ -433,7 +433,7 @@ print(access_token)
 ```
 
 
-### Authentification Process and httr::GET request
+### Authentication Process and httr::GET request
 
 Step 1. Set the **url** with endpoint and save some **query parameters** into a variable for GET request.
 
